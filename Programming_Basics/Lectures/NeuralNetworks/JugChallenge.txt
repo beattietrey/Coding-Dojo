@@ -1,0 +1,51 @@
+Fill a jug with 4 gallons of water
+
+2 jugs + 3 gallon and 5 gallon
+
+1. Fill 3 gallon jugs
+2. Pour 3 gallon into 5 gallon
+3. Fill 3 gallon jug
+4. Fill 5 gallon with whatever you can from the 3 gallon jug
+   *should be left with 1 gallon in the 3 gallon
+5. Dump out 5 gallon
+6. Pour 1 gallon into 5 gallon
+7. Fill 3 gallon jug
+8. Pour into 5 gallon
+9. Place on scale
+
+var i = 0 // 5 gallon jug amount of water;
+var x = 3 // 3 gallon amount of water;
+
+// need to set a parameter that i cannot be greater than 5
+// need to set parameter that x stops pouring if i is 5
+// % for remainders?
+
+//while loop instead
+
+for(i = 0; i != 4; //i needs to be whatever the remainder of x is, until i is 5) {
+    if(i == 4) {
+        console.log("Place Jug on Scale");
+    }
+    else if(i < 4) {
+        i += x;  
+    }
+    else if(x == 0) {
+        x = 3;
+    }
+}
+
+var i = 0;
+var x = 3;
+
+function remainder(i) {
+    while(i >= 5) {
+        x = i - 5
+    }
+    console.log("overflow")
+    return x;
+}
+
+while (i != 4) {
+    i = i + x;
+    console.log("add 3 to 5")
+}

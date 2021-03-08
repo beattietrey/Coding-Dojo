@@ -1,0 +1,42 @@
+* {
+    margin:0;
+    padding: 5px;
+    border:0;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Background */
+
+/* Content we're putting a blur over */
+.background {
+    background-image:url(./Images/Pip+&+Lola+Logo.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:50%;
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+}
+
+
+ /* Background Blur using backdrop-filter */ 
+.blur {
+    background: rgba(255, 255, 255, 0.719); /*  // Make sure this color has an opacity of less than 1 */
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: repeat;
+
+}
+
+/* Header */
+
+.bottom-border {
+    border-bottom: 1px solid rgb(238, 237, 237);
+}
+
+
+.image-links {
+    width: 100%;
+    border-radius: 15%;
+}

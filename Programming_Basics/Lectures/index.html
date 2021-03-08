@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Intro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- shortcuts for id in emmet #"id" after tag
+            class ."class"     -->
+    <div id="container"> <!-- div is default a "block" making it display on it's own line. if you have multiple containers, say for a header, body, and footer, then you should use class instead of id-->
+
+
+        <header>
+                <!-- id is a unique identifier, used for a single thing, classes are groups of things with a relationship to each other -->
+                <h1 id="logo">SHANG CHI</h1> <!--only one header 1 per page-->
+                <nav> <!-- nav is an example of a semantic tag. Used for specific elements that are used across a majority of sites
+                            others include main, section, article, footer, header, aside-->
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <main>
+            <aside>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi fuga id doloremque et. Quos sint, quaerat distinctio quidem earum molestiae. Neque illo aperiam deleniti, molestiae, suscipit quo autem enim doloremque beatae ratione id nihil maiores dolor impedit sunt ducimus magnam quas laborum in adipisci obcaecati repellat numquam expedita harum? Sunt?</p>
+            </aside>
+            <div id="content">
+                <h2 class="title">Here's some stuff about Shang Chi!</h2>        
+                <!-- <img id="overlay" src="./images/shang_chi_logo.png" alt="Shang Chi Logo">             -->
+                <img id="hero" src="./images/shang-chi-hero.jpg" alt="It's better to save images into an images folder for this page specifically."> <!-- use ./ to help find the right file path once it is saved-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7Z7bZOJV3v8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- snag the embed code from youtube and put it where you would like it -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam unde, at iste corporis facilis nihil similique mollitia cum, quod architecto natus reiciendis tempore, excepturi voluptas alias dolorem dicta id nobis. Laboriosam sit illo eveniet porro. Nulla voluptatum provident, illo vel soluta repellat similique architecto, fugiat deleniti nisi commodi aperiam magni dignissimos quam amet culpa ipsum, vero eligendi ex laborum officiis quaerat quidem odit! Consequatur unde itaque alias numquam maiores, architecto quisquam molestias. Itaque similique temporibus repellat tempore, qui vitae atque quas. Voluptate minima qui ipsum est totam saepe, iste blanditiis accusamus modi, aliquam numquam temporibus delectus at sed nesciunt fugiat magni quo quaerat aliquid facilis. Temporibus totam itaque, eveniet obcaecati eaque harum, quae inventore commodi esse minus similique, atque quod? Aliquid consequuntur cum assumenda consectetur maxime, facere sint. Totam magni vel cupiditate omnis iusto quam, a, sunt eum consequuntur earum nemo enim asperiores ea aliquam dolorum vero nihil recusandae. Corrupti similique accusantium laudantium voluptate. Est adipisci et, ab minima, vero voluptatum exercitationem earum ex culpa accusantium rerum eos neque porro sint, error dolor! Fugit, non consequuntur? Ratione, quis nostrum? At veritatis nobis fuga tenetur commodi eius, expedita quod soluta hic necessitatibus! Sunt architecto consectetur tempora deleniti magnam! Unde ab modi tenetur doloremque, aliquam beatae, porro voluptatibus possimus illo voluptatem repellat laborum quidem quam dolore similique facilis tempora facere culpa qui quia minus soluta animi. Molestias porro quas quod nihil id, corrupti, odit nostrum, quibusdam illum vel sit? Porro reprehenderit, illo architecto laudantium enim, fuga autem ullam deleniti numquam, in nisi.</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        Copyright Me
+    </footer>
+</body>
+</html>

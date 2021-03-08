@@ -1,0 +1,24 @@
+pip list
+    lists all installed packages
+
+pip freeze
+    lists all installed packages, but only the ones installed by python
+
+pip3 list 
+    lists installed packages on the python3 environment, but pip lists the ones on the environment appropriate to the context
+
+source myEnvironments/py3Env/bin/activate [call myEnvironments/py3Env/Scripts/activate]
+    starts a virtual environment, so that you can run multiple different versions and packages, without interfering with other applications
+
+deactivate
+    ends the virtual environment, can also shut the git bash or command prompt window
+
+pip install Django==2.2.4
+    installs a particular version of a package, in this case Django
+
+pip uninstall Django
+    uninstalls an installed package
+
+pip show Django 
+    in this case, pops up with nothing, because the package has been uninstalled
+

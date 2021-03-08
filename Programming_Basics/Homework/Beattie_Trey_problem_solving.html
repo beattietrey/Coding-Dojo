@@ -1,0 +1,42 @@
+<!--Using comments, write out 1 strategy that could be used to solve the problem.
+    Using comments, create pseudo-code to apply one of the strategies to solve the problem. 
+    Using comments, write a short paragraph that answers: What is the hardest part of problem-solving?  -->
+
+<!--The first strategy I can think of for solving this problem, would be to find out which pronouns are most common in the paragraph.
+    If the paragragh contains more "me," "I," or "we" words, it would be first person.
+    If the paragraph contains more "you" or "your" words, it would be second person.
+    If the paragraph contains more "he," "she," "they," or "it" words, it would be third person -->
+
+<!-- The first step to write this code would be a function, with a parameter that would allow the paragraph to be set for the argument of the function -->
+function perspectiveCheck(paragraph) {
+<!-- The next step would be setting variables for word counts for each of the pronouns -->
+    var firstCount = 0;
+    var secondCount = 0;
+    var thirdCount = 0; 
+<!-- The next step would be setting up a for loop that runs through the string. -->
+    for(var i = 0; i < paragraph.length; i++) {
+<!-- The next would be figuring out how to search for specific words in the code -->
+<!-- I would then count each instance of the words -->
+        if(paragraph[i] == "I" && paragraph[i-1] == " " && paragraph[i+1] == " ") {
+            <!-- looking for instances of I -->
+            firstCount++;
+        }
+        if(paragraph[i] == "h" && paragraph[i-1] == " " && paragraph[i+1] == "e" && paragraph[i+2] == " ") {
+            <!-- looking for instances of "he" -->
+            thirdCount++;
+        }
+        <!-- etc... -->
+    }
+        <!-- Then I would need to use if statements to determine which pronouns are more prevalent in the paragraph -->
+    if(firstCount > secondCount && firstCount > thirdCount) {
+        console.log("First Person Perspective")
+    }
+    if(secondCount > firstCount && secondCount > thirdCount) {
+        console.log("Second Person Perspective")
+    }
+    if(thirdCount > firstCount && secondCount > thirdCount) {
+        console.log("Third Person Perspective")
+    }
+}
+
+<!-- The hardest part about problem solving is figuring out how you need to approach the situation in the first place. You have to have a plan of attack for how you will start the process or you won't be able to break it down into smaller steps. Once you have a plan, then it's only about figuring out how to do each step, which is a much easier thing. -->

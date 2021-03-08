@@ -1,0 +1,12 @@
+Room 1
+
+1) D. Netscape
+2) C. Livescript
+3) B. No
+4) c. Full-Stack
+5) A. Loosely
+6) A. JavaScript is a lightweight, interpreted programming language.
+7) D. None of the above
+8) A. True
+9) B. False
+10) D. All of the above

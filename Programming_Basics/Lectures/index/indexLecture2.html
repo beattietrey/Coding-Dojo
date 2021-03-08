@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Most often, user is coming to a website and using GET requests to retrieve info -->
+    <!-- CRUD Applications - Create, Read, Update, Delete -->
+    <form action="#" method="POST"> <!-- # is used as placeholder, method is how we get info from them-->
+        <div> <!-- creates a separate vertical space for the info, should not have a single child element in it-->  
+            <label for="firstName">First Name:</label>
+            <input type="text" name="fieldInDatabase" id="firstName" placeholder="Placeholder Text"> <!-- text input / id links to label, name links to database-->
+        </div>
+
+        <div>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age"> <!-- number required input-->
+        </div>
+
+        <div>
+        <label for="birthday">Birth Date</label>
+        <input type="date" name="birthday" id="birthday"> <!-- browser specific -->
+        </div>
+        
+        <select name="optionChoice"> <!-- dropdown menu-->
+            <option value="actual value to submit">Text to be displayed</option> <!-- options in the menu -->
+            <option value="actual value to submit">2</option> 
+            <option value="actual value to submit">3</option>
+            <option value="actual value to submit">4</option>
+            
+        </select>
+        
+        <input type="checkbox" name="isHappy" value="Yes" id="">  <!-- creates a checkbox -->
+        <input type="checkbox" name="isHappy" value="Maybe" id="">
+        <input type="checkbox" name="isHappy" value="No" id="">
+
+        <input type="radio" name="favoriteLanguage" value="C#" id=""> <!-- selecting one choice from multiple, but must have same name="" -->
+        <input type="radio" name="favoriteLanguage" value="Javascript" id="">
+        <input type="radio" name="favoriteLanguage" value="Python" id="">
+
+        <textarea name="bio" cols="30" rows="10"></textarea> <!-- used for larger text inputs, not things like email address or name -->
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- should you be asked an interview question that wants you to align text on aa system that can't run CSS, you can technically use a table to do it, but you shouldn't use that in practice -->
+    
+    <table>
+        <thead> <!-- labels for each column-->
+            <tr> <!-- designated row-->
+                <th>First Name</th> <!-- each separate item in table header cell-->
+                <th>Age</th>
+                <th>Birthday</th>
+                <th>Option</th>
+                <th>Bio</th>
+                <th>Happy</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Trey</td> <!-- subsequent rows lower in the table-->
+                <td>30</td>
+                <td>03/05/1990</td>
+                <td>Option 2</td>
+                <td>I'm me, that's it</td> <!-- Input text will word wrap --> 
+                <td>Rarely</td>
+                <td>I barely know any</td>
+            </tr>
+            <tr>
+                <td>Billy</td> <!-- subsequent rows lower in the table-->
+                <td>130</td>
+                <td>03/05/1891</td>
+                <td>Option 6</td>
+                <td>I vant to suck your blood</td>
+                <td>Never</td>
+                <td>v#</td>
+            </tr>
+            <tr>
+                <td>Janet</td> <!-- subsequent rows lower in the table-->
+                <td>42</td>
+                <td>03/05/1952</td>
+                <td>Option 4</td>
+                <td>Stuff</td>
+                <td>Sure</td>
+                <td>Python</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+        <!-- hold alt to select multiple points to type same data -->
+</body>
+</html>

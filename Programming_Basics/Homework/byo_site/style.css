@@ -1,0 +1,73 @@
+* {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+background-color: beige;
+}
+
+main {
+    margin: 0 auto;
+}
+
+#container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+#title,
+#email {
+    display: inline-block;
+}
+
+/* sidebar */
+.sidebar {
+    display: inline-block;
+    vertical-align: top;
+    width: 250%;
+    padding-right: 5%;
+}
+.logo {
+    width: 35px;
+}
+
+/* main content */
+.main {
+    border-left: 1px solid gray;
+    padding-left: 5%;
+    display: inline-block;
+    vertical-align: top;
+    width: 69%;
+}
+
+#info {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 3px solid lightblue;
+}
+    thead {
+        border-bottom: 2px solid lightblue;
+    }
+    th, td {
+        padding: 5px 15px;
+    }
+    td a {
+        text-decoration:none;
+        color: darkred;
+    }
+
+.hidden {
+    visibility: hidden;
+}
+
+.with-css:after {
+    content: "But with just a little CSS, we can transform the way all the content appears!";
+}

@@ -1,0 +1,19 @@
+/* All you really need is a container to apply flex to and justify-content to move them around */
+
+
+
+.flex-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items:center
+}
+.sub-contents {
+    /* display: inline-block; */
+    width: 30%;
+    /* vertical-align: top; */
+}
+
+#full-width {
+    width: 100%
+}

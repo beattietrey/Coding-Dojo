@@ -1,0 +1,52 @@
+It's time to play Rock, Paper, Scissors!
+
+Cody and Ciso play rock, paper, scissors 10 times.
+
+Paper beats Rock
+Rock beats Scissors
+Scissors beats Paper
+
+
+Cody uses rock 3 times, scissors 6 times, and paper 1 time.
+Ciso uses rock 2 times, scissors 4 times, and paper 4 times.
+
+Throughout all 10 games, there are 0 ties, and the order in which
+Cody and Ciso played those hands is unknown.
+
+Given this information, who wins, and by how much?
+
+Cody beats Ciso - 7 to 3
+
+
+6 scissors - 4 wins against Paper, 2 losses against rock
+3 Rock - 3 wins against scissors
+1 paper, loss against scissors
+
+
+x = "Cody";
+y = "Ciso";
+rspArray = ["Rock", "Paper", "Scissors"]
+
+for (var i = 1; 1<= 10; i++) {
+    if(x === rspArray[0] && y === rspArray[2]) {
+        console.log("Cody wins");
+    }
+    if(x === rspArray[1] && y === rspArray[0]) {
+        console.log("Cody wins");
+    }
+    if(x === rspArray[2] && y === rspArray[1]) {
+        console.log("Cody wins");
+    }
+    else if (x = rspArray[0] && y = rspArray[0]) {
+        i--;
+    }
+    else if (x = rspArray[1] && y = rspArray[1]) {
+        i--;
+    }
+    else if (x = rspArray[2] && y = rspArray[2]) {
+        i--;
+    }
+    else{
+        console.log("Ciso Wins");
+    }
+}

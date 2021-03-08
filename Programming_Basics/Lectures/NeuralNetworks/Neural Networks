@@ -1,0 +1,17 @@
+Day 1.
+
+"A farmer goes to the market, and purchases a wolf, a goat, and some wheat.
+
+On his way back from the market, he comes across a river, and a boat. The
+problem is, the boat can only hold the farmer and 1 of his purchases at a 
+time. In addition, he can't leave the wolf and goat together, or else the 
+wolf will eat the goat, and he can't leave the goat and the wheat together,
+or the goat will eat the wheat.
+
+Your Building Neural Network challenge for today is to figure out how the 
+farmer could get all 3 to the other side without losing any of them in as 
+few trips as possible."
+
+
+Goat First, then wheat, bring back goat, bring over wolf, bring over goat?
+    4 trips

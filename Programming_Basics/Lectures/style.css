@@ -1,0 +1,126 @@
+/* Three parts to a CSS Rule */
+
+/* 
+    1. The Selector
+    2. The Property Name
+    3. Property Value
+*/
+
+/* * is a wild card selector. It affects every element on the page. Be careful using it */
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: lightgray;
+    background-image:url(#);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+body:focus {
+    background-size: 100%;
+}
+
+#container {
+    width: 970px;
+    background-color: lightgray;    
+    background: linear-gradient(#e66456, blue);
+    background-size: 500%;
+    transition: 1000;
+    margin:0 auto;
+    /* specifies margin sides, 1 value = all sides, 2 values = top/bottom and left/right, 4 values = top, bottom, left, right */
+}
+
+/* select a specific id by using # */
+#logo {
+    color: darkred;
+}
+
+/* use a comma to select multiple elements at once */
+/* header h1,
+header nav{
+    display: inline-block;
+} */
+
+/* targeting the parent makes each child element have the same attributes */
+header {
+    display: flex;
+    /* justify and align only work with flex */
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    border: 1px solid black; 
+    /* you can set three values with the border (width, style, color) */
+    /* border-radius: 10px; */
+    background-color: darkred;
+}
+
+/* select an element by using just it's name 
+put a space betwen the selectors to target only the second elements within the first. 
+Alternately you can use the > sign ex. nav > a { */
+nav a { /* targeting link elements in nav */
+    text-decoration: none;
+    color: white;
+
+}
+
+nav a:hover { /* will only apply in a certain state */
+    text-decoration: underline;
+
+}
+
+nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+
+}
+
+p {
+    margin: 20px;
+}
+/*  use a . to select a class */
+.title {
+    background-color: darkslategray;
+    /* margin pushes things away and padding pushes things in */
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* you can use the inspect tool on your page to check things like margin and padding in the styles */
+
+
+/* style only by width, because the height will change too, based on the aspect ratio */
+#hero {
+    width: 700px;
+}
+aside,
+#content {
+    display: inline-block;
+}
+
+aside {
+    width: 200px;
+    vertical-align: top;
+    /* sets where the start of the block is */
+
+}
+
+#content {
+    width: 700px;
+}
+/* 
+#overlay {
+    z-index: 1000;   
+} 
+
+#hero {
+    position: relative;
+    top: -400px;
+    z-index: -1;
+} */ 
