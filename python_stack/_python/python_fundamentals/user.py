@@ -18,7 +18,7 @@ class User:
     def transfer_money(self, other_user,amount):
         self.account_value-=amount
         other_user.account_value+=amount
-        print(f'{self.name} Balance: {self.account_value}, {other_user.name} Balance: {other_user.account_value}')
+        print(f"{self.name} Balance: {self.account_value}, {other_user.name} Balance: {other_user.account_value}")
     
 
 
