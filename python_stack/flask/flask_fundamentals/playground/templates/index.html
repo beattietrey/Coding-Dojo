@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Playground</title>
+</head>
+<body class="max-width: 100vw">
+    <h1 class="text-center">Welcome!</h1>
+    <div class="container flex">
+        <div style="display: flex; ">
+            {% for x in range(0,times): %}
+                <div style="margin: 20px; background-color:{{color}}; width:30%; min-height: 30vh; border: 1px solid black;">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
