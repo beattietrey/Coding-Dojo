@@ -19,9 +19,15 @@ class User:
         return self
 
     def transfer_money(self, user_acct_name, other_user,other_user_acct_name,amount):
-        self.account.withdraw(amount)
-        other_user.account.deposit(amount)
-        print(f"{self.name} Balance: {self.account[user_acct_name].display_account_infocopy()}, {other_user.name} Balance: {other_user.account[other_user_acct_name].display_account_infocopy()}")
+        self.account[user_acct_name].withdraw(amount)
+        other_user.account[other_user_acct_name].deposit(amount)
+        print(self.name)
+        print(user_acct_name)
+        self.account[user_acct_name].display_account_infocopy()
+        print(other_user.name)
+        print(other_user_acct_name)
+        other_user.account[other_user_acct_name].display_account_infocopy()
+
 
 class BankAccount:
     def __init__(self, int_rate, balance):
@@ -52,7 +58,8 @@ user3 = User("Shelley Peterson", 'Checking')
 user1.make_bank_account('Savings')
 user1.make_bank_account('Checking-2')
 
-user1.make_deposit(300,'Checking')
-user1.make_deposit(300,'Savings')
+# user1.make_deposit(300,'Checking')
+# user1.make_deposit(300,'Savings')
 
-
+user1.transfer_money('Checking', user2, 'Checking', 500)
+# user1.account['Checking'].display_account_infocopy()
