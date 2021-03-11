@@ -15,10 +15,27 @@ z = [ {'x': 10, 'y': 20} ]
 # In the sports_directory, change 'Messi' to 'Andres'
 # Change the value 20 in z to 30
 
-x[1][0] = 15
-students[0]["last_name"] = 'Bryant'
+# x[1][0] = 15
+
+def updList(lst,x,y,val):
+    lst[x][y] = val
+    print(lst)
+    return lst
+
+updList(x,1,0,15)
+
+# students[0]["last_name"] = 'Bryant'
+
+
+
 sports_directory['soccer'][0] = 'Andres'
 z[0]['y'] = 30
+
+
+def updateAny2(obj,x,y,val):
+    obj[x][y] = val
+    print(obj)
+    return obj
 
 
 # Iterate Through a List of Dictionaries
@@ -31,11 +48,22 @@ students = [
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
 
-def iterateDictionary(dict):
-    for i in range(0,len(dict),1):
-        firstName = dict[i]['first_name']
-        lastName = dict[i]['last_name']
-        print(f'first_name - {firstName}, last_name - {lastName}')
+# def iterateDictionary(dct):
+#     for dct in dct:
+#         firstName = dct[i]['first_name']
+#         lastName = dct[i]['last_name']
+#         print(f'first_name - {firstName}, last_name - {lastName}')
+
+def iterateDictionary(dct):
+    keyList = []
+    valList = []
+    for dct in dct:
+        for key in dct:
+            keyList.append(key)
+        for key in dct:
+            valList.append(dct[key])
+    for i in range(0, len(keyList),2):
+        print(f'{keyList[i]} - {valList[i]}, {keyList[i+1]} - {valList[i+1]}')
 
 iterateDictionary(students) 
 # should output: (it's okay if each key-value pair ends up on 2 separate lines;
