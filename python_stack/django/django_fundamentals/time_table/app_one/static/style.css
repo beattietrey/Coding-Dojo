@@ -1,0 +1,11 @@
+.text-center {
+    margin: auto;
+    text-align: center;
+}
+
+.border {
+    padding: 10px 40px;
+    border: 2px solid black;
+    width: 200px;
+    margin-bottom: 20px;
+}
