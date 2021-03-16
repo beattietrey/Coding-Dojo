@@ -5,8 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Here is the survey page</h1>
+    <h1 class="text-center mb-5">Dojo Survey</h1>
+    <div class="container border p-5 text-center d-flex">
+        <form class="mx-auto" action="result" method="POST">
+            {% csrf_token %}
+                <input class="mb-3 mx-2" type="text" name ="name" placeholder="Name">
+                <input class="mb-3 mx-2"type="text" name ="email" placeholder="E-mail">
+                <label for="location">Your Dojo Location:</label>
+                    <select name="location" id="location">
+                        <option value="Arlington">Arlington</option>
+                        <option value="Bellevue">Bellevue</option>
+                        <option value="Boise">Boise</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="LA">LA</option>
+                        <option value="Oakland">Oakland</option>
+                        <option value="OC">OC</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Tulsa">Tulsa</option>
+                        <option value="Online">Online</option>
+                    </select>
+                <input class="mb-3 mx-2"type="text" name ="language" placeholder="Favorite Code Language">
+                <input class="mb-3 mx-2"type="text" name ="color" placeholder="Your Favorite Color">
+                <div>
+                    <label class="mb-3 mx-2" for="radio">How did I do:</label>
+                    <input type="radio" name="how" value="Good" checked>
+                    <label for="Good">Good</label>
+                    <input type="radio" name="how" value="Bad">
+                    <label for="Bad">Bad</label>
+                    <input type="radio" name="how" value="I haven't decided">
+                    <label for="I haven't decided">I haven't decided</label>
+                </div>
+                <div>
+                    <label for="checkboxes">Pick any numbers you want</label>
+                    <input type="checkbox" name="number" value="1">
+                    <label for="1">1</label>
+                    <input type="checkbox" name="number" value="2">
+                    <label for="2">2</label>
+                    <input type="checkbox" name="number" value="3">
+                    <label for="3">3</label>
+                    <input type="checkbox" name="number" value="4">
+                    <label for="4">4</label>
+                    <input type="checkbox" name="number" value="5">
+                    <label for="5">5</label>
+                </div>
+                <div>
+                    <textarea name="comments" id="comments" cols="30" rows="5" placeholder="Any thoughts?"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

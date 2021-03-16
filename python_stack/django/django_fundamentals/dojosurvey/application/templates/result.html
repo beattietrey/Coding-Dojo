@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Here are words</h1>
+    <h1>Thanks for you submission</h1>
+    <p>Name: {{name}}</p>
+    <p>E-mail: {{email}}</p>
+    <p>Location: {{location}}</p>
+    <p>Language: {{language}}</p>
+    <p>Color: {{color}}</p>
+    <p>How did I do: {{how}}</p>
+    <p>Picked Numbers: {% for i in number %} <li>{{i}}</li> {% endfor %}
+    </p>
+    <p>Additional comments: {{comments}}</p>
 </body>
 </html>
