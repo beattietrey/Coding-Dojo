@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container d-flex">
+        <label class="mr-1" for="gold">Your Gold:</label>
+        <div style="min-height: 10px; width: 40px;">
+            <span class="border border-secondary px-5">{{gold}}</span>
+        </div>
+    </div>
+    <div class='container d-flex mt-5'>
+        <div class="card mr-3" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Farm</h5>
+            <p class="card-text">(Earns 10-20 Gold)</p>
+            <a href="/farm" class="btn btn-primary">Find Gold!</a>
+            </div>
+        </div>
+        <div class="card mr-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Cave</h5>
+                <p class="card-text">(Earns 5-10 Gold)</p>
+                <a href="/cave" class="btn btn-primary">Find Gold!</a>
+            </div>
+        </div>
+        <div class="card mr-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">House</h5>
+                <p class="card-text">(Earns 2-5 Gold)</p>
+                <a href="/house" class="btn btn-primary">Find Gold!</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Casino</h5>
+                <p class="card-text">(Earns/Takes 0-50 Gold)</p>
+                <a href="/casino" class="btn btn-primary">Find Gold!</a>
+            </div>
+        </div>
+    </div>
+    <div class="container border border-secondary mt-5" style="min-height: 300px; max-height: 300px; overflow-y: scroll; overflow-anchor: none;">
+        {% for key in timeline %}
+        <p style="color:{{color}};">{{key}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
