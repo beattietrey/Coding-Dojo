@@ -1,0 +1,41 @@
+$ python manage.py makemigrations
+
+$ python manage.py migrate
+
+$ python manage.py shell
+
+>>> from dojo_ninjas_app.models import*
+
+>>> dojo1 = Dojo.objects.create(name="Bellevue", city="Bellevue", state="Washington")
+
+>>> dojo2 = Dojo.objects.create(name="Chicago", city="Chicago", state="Illinois") 
+
+>>> dojo3 = Dojo.objects.create(name="The Moon", city="Dome City", state="Out of this world.")
+
+>>> Dojo.objects.all().delete()
+
+>>> ninja1 = Ninja.objects.create(dojo_id = dojo1, first_name="Trey", last_name="Beattie")
+>>> ninja2 = Ninja.objects.create(dojo_id = dojo1, first_name="Stever", last_name="Steve") 
+>>> ninja3 = Ninja.objects.create(dojo_id = dojo1, first_name="Steve", last_name="Rogers") 
+
+>>> ninja4 = Ninja.objects.create(dojo_id = dojo2, first_name="Trey", last_name="Beattie") 
+>>> ninja5 = Ninja.objects.create(dojo_id = dojo2, first_name="Trey", last_name="B")       
+>>> ninja6 = Ninja.objects.create(dojo_id = dojo2, first_name="T", last_name="Beat")   
+
+>>> ninja7 = Ninja.objects.create(dojo_id = dojo3, first_name="Trey", last_name="Beattie") 
+>>> ninja8 = Ninja.objects.create(dojo_id = dojo3, first_name="Bill", last_name="Rogers") 
+>>> ninja9 = Ninja.objects.create(dojo_id = dojo3, first_name="David", last_name="Harleyman") 
+
+>>> Dojo.objects.first().ninjas.all()
+>>> Dojo.objects.last().ninjas.all()
+
+>>> Ninja.objects.last().dojo_id         
+
+>>> exit()
+
+$ python manage.py makemigrations
+$ python manage.py migrate
+
+$ python manage.py shell
+>>> from dojo_ninjas_app.models import *
+
