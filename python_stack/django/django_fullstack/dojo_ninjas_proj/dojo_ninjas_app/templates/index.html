@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos and Ninjas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container d-flex pb-5 border-bottom border-secondary p-5 text-center">
+        <div class="container mx-auto">
+            <h2>Add a Dojo</h2>
+            <div class="form-group">
+                <form action="/submit_dojo" method="post">
+                    {% csrf_token %}
+                    <input class ="d-block" type="text" name="name" required placeholder="Name">
+                    <input class ="d-block" type="text" name="city" required placeholder="City">
+                    <input class ="d-block" type="text" name="state" required placeholder="State">
+                    <button class ="d-block" type="submit">Add</button>
+                </form>
+            </div>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Add a Ninja</h2>
+            <div class="form-group">
+                <form action="/submit_ninja" method="post">
+                    {% csrf_token %}
+                    <input class ="d-block" type="text" name="first_name" required placeholder="First Name">
+                    <input class ="d-block" type="text" name="last_name" required placeholder="Last Name">
+                    <select  class ="d-block" name="dojo_id">
+                        {% for dojo in dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <button class ="d-block" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto ">
+        <h2 class="text-center">All the Dojos</h2>
+        {% for dojo in dojos %}
+        <div class="container d-flex">
+            <div>
+        <a href="/delete_dojo/{{dojo.id}}" class="btn btn-danger active" role="button" aria-pressed="true">Delete</a></div>
+        <div class="container">
+            <h5 class="text-center">Ninjas at {{dojo.name}} - {{length}}
+            </h5>
+
+        </div>
+        </div>
+        <ul>
+            {% for ninja in dojo.ninjas.all %}
+            <li class="list-group text-center">{{ninja.first_name}} {{ninja.last_name}}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>
