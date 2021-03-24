@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container d-flex">
+        <div class="container w-75">
+            <h1>Success! Welcome {{user.first_name}}!</h1>
+            {% if how == 'reg' %}
+            <h2 class="text-success">Successfully Registered</h2>
+            {% elif how == 'login' %}
+            <h2 class="text-success">Successfully Logged In</h2>
+            {% endif %}
+        </div>
+        <div class="container w-25">
+            <a href="/logout" class="btn btn-primary">Logout</a>
+        </div>
+    </div>
+</body>
