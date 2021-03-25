@@ -4,9 +4,10 @@ from django.contrib import messages
 import bcrypt
 
 # display
+
 def registration_page(request):
     if 'id' in request.session:
-        return redirect('/success')
+        return redirect('/wall')
     else:
         return render(request,'registration.html')
 
@@ -22,8 +23,6 @@ def success(request):
 
 
 
-
- 
 
 # actions
 
@@ -51,7 +50,7 @@ def registration(request):
         
         request.session['how']='reg'
         request.session['id']=user.id
-        return redirect('/success')
+        return redirect('/wall')
     
 
 def login(request):
@@ -65,7 +64,7 @@ def login(request):
         logged_user = user[0]
         request.session['id']= logged_user.id
         request.session['how']='login'
-        return redirect('/success')
+        return redirect('/wall')
     else: 
         print("invalid login")
         return redirect('/')

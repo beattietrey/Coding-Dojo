@@ -1,20 +1,24 @@
 from django.db import models
-import pytz
+from datetime import datetime, date,timedelta
+
 
 # Create your models here.
 class ShowManager(models.Manager):
     def basic_validator(self, postData):
+        today = datetime.today()
         errors = {}
-        if len(postData['title']) < 2:
-            errors['title'] = 'Title must be at least 2 characters'
+        # if len(postData['title']) < 2:
+        #     errors['title'] = 'Title must be at least 2 characters'
         if len(postData['network']) < 3:
             errors['network'] = 'Network must be at least 3 characters'
         if len(postData['description']) > 0 and len(postData['description']) < 10:
             errors['description'] = 'Description must be at least 10 characters'
         # if postData['release_date'] > timezone.now().date():
         #     errors['release_date'] = 'Release date must be in the past'
-        if postData['title'] in Show.objects.filter(title=postData['title']):
-            errors['title'] = 'Title must not belong to show currently'
+        if len(Show.objects.filter(title=postData['title']))>0:
+            errors['title'] = 'Title already in use'
+        if datetime.strptime(postData['release_date'], "%Y-%m-%d") < today:
+            errors['release_date'] = "Release Date must be in the past"
         return errors
 
 
