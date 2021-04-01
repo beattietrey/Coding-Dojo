@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books and Authors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container p-5">
+        <h4>{{book.title}}</h4>
+        <p>Author: {{book.author}}</p>
+        <div class="container">
+            <form action="/author_to_book/{{book.id}}" method="post">
+                {% csrf_token %}
+                <select class="form-select" aria-label="Default select example" name="rating" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit" class='btn-primary'>Add</button>
+            </form>
+            <a href="/" class="btn btn-dark">Back to Books</a>
+        </div>
+    </div>
+</body>
+</html>

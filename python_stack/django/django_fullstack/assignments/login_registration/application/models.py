@@ -35,8 +35,8 @@ class UserManager(models.Manager):
         if len(User.objects.filter(email=postData['email'])) < 1:
             errors['login'] = 'Invalid login credentials'
         else:
-            user= User.objects.filter(email=postData['email'])
-            logged_user=user[0]
+            # user= User.objects.filter(email=postData['email'])
+            # logged_user=user[0]
             if not EMAIL_REGEX.match(postData['email']):             
                 errors['email'] = "Invalid email address!"
             if not postData['email'] not in User.objects.filter(email=postData['email']):

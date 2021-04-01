@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="container d-flex mt-3">
+            <div class="container w-75">
+                <h3>Welcome {{user.first_name}}!</h3>
+            </div>
+            <div class="container w-25">
+                <a href="/books/add" class="btn btn-primary">Add Book and Review</a>
+            </div>
+            <div class="container w-25">
+                <a href="/logout" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+        <div class="container d-flex mt-3">
+            <div class="container">
+                <h4>Recent Books reviews:</h4>
+                <div>
+                    {% for review in reviews reversed %}
+
+                    <a href="/books/{{review.book.id}}">{{review.book.title}}</a>
+                    <ul>
+                        <li>Rating: {{review.rating}} stars</li>
+                        <li><a href="/users/{{review.user.id}}">{{review.user}}</a> says: {{review.review_content}}</li>
+                        <li>Posted on: {{review.created_at}}</li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="container">
+                <h4>Other Books with Reviews:</h4>
+                <div class="border border-dark">
+                    <ul>
+                    {% for book in books %}
+                        <li><a href="/books/{{book.id}}">{{book.title}}</a></li>
+                    {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
