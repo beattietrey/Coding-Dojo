@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Portfolio {
     private ArrayList<Project> projects = new ArrayList<Project>();
-
+    
     public Portfolio(Project name) {
         projects.add(name);
     }
@@ -12,6 +12,9 @@ public class Portfolio {
     }
 
     public ArrayList<Project> getProjects() {
+        for(int i = 0; i < projects.size(); i++) {
+            System.out.println(projects.get(i).getName());
+        }
         return projects;
     }
 
@@ -21,5 +24,12 @@ public class Portfolio {
             sum+=projects.get(i).getCost();
         }
         return sum;
+    }
+
+    public void showPortfolio() {
+        for(int i = 0; i < projects.size(); i++) {
+            System.out.println(projects.get(i).getDescription());
+        }
+        System.out.println(this.getPortfolioCost());
     }
 }
