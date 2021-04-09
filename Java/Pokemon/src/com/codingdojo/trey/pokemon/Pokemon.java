@@ -7,6 +7,13 @@ public class Pokemon {
 	
 	private static int count = 0;
 	
+	public Pokemon(String name, int health, String type) {
+		this.setName(name);
+		this.setHealth(health);
+		this.setType(type);
+		count++;
+	}
+	
 	public void attackPokemon(Pokemon pokemon) {
 		pokemon.setHealth(pokemon.getHealth() - 10);
 	}
