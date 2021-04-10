@@ -6,13 +6,12 @@ public class Calculator2Test {
 		Calculator2 c = new Calculator2();
 		
 		c.performOperation(10.5);
-		System.out.println(c.getOperands());
-		
-		c.performOperation(10);
-		System.out.println(c.getOperands());
-		
 		c.performOperation("+");
-		System.out.println(c.getModifiers());
+		c.performOperation(5.2);		
+		c.performOperation("*");		
+		c.performOperation(10);
+		c.performOperation("=");
+		System.out.println(c.getResult());
 	}
 
 }
