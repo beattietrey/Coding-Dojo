@@ -1,5 +1,4 @@
 package com.codingdojo.trey.tries;
-
 import java.util.Set;
 
 public class Trie {
