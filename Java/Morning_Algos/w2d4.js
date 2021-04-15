@@ -115,6 +115,7 @@ function isStackSorted(stack) {
     var tempStack = new slStack;
     var prev;
     var current;
+    var sorted = true;
     while(!stack.peek()==null) {
         prev = stack.pop();
         tempStack.push(prev);
@@ -122,13 +123,14 @@ function isStackSorted(stack) {
         // console.log(prev);
         // console.log(current)
         if(current.data < prev.data) {
-            return false
+            sorted = false
+            break;
         }
     }
     while(!(tempStack.isEmpty())) {
         stack.push(tempStack.pop());
     }
-    return true
+    return sorted;
 }
 
 function isPalindrome(queue) {
