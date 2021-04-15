@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	java.util.Date date = new java.util.Date();
 	  
-	DateTimeFormatter weekday = DateTimeFormatter.ofPattern("EEEE"); 
-	DateTimeFormatter day = DateTimeFormatter.ofPattern("dd"); 
-	DateTimeFormatter month = DateTimeFormatter.ofPattern("MMMM, YYYY"); 
+	DateTimeFormatter weekday = DateTimeFormatter.ofPattern("EEEE', the 'dd' of ' MMMM, YYYY"); 
+
 	DateTimeFormatter time = DateTimeFormatter.ofPattern("hh:mm a");
 	LocalDateTime now = LocalDateTime.now();  
 	          
@@ -25,9 +24,7 @@ public class HomeController {
 	
 	@RequestMapping("/date")
 	public String date(Model model) {
-		model.addAttribute("day",day.format(now));
 		model.addAttribute("weekday",weekday.format(now));
-		model.addAttribute("month",month.format(now));
 		return "date.jsp";
 	}
 	

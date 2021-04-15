@@ -9,14 +9,14 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<script type="text/javascript" src="js/date.js"></script>
 <meta charset="ISO-8859-1">
 <title>Date</title>
 </head>
 <body>
 	<div class="flex">
 			<div class="col">
-				<h1><c:out value="${weekday}"/>, the <c:out value="${day}"/> of <c:out value="${month}"/></h1>
+				<h1><c:out value="${weekday}"/></h1>
 			</div>
 
 	</div>
