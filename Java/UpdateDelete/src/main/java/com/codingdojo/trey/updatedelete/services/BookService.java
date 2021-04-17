@@ -34,7 +34,7 @@ public class BookService {
         }
     }
     
-    
+
     public Book updateBook(Book book) {
     	Optional<Book> updated = bookRepository.findById(book.getId());
     	if(updated.isPresent()) {
