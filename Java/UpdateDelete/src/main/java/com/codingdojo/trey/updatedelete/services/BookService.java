@@ -34,14 +34,15 @@ public class BookService {
         }
     }
     
-    public Book updateBook(Long id, String title,String desc, String lang, int numOfPages) {
-    	Optional<Book> updated = bookRepository.findById(id);
+    
+    public Book updateBook(Book book) {
+    	Optional<Book> updated = bookRepository.findById(book.getId());
     	if(updated.isPresent()) {
-    		Book book = updated.get();
-    		book.setTitle(title);
-    		book.setDescription(desc);
-    		book.setLanguage(lang);
-    		book.setNumberOfPages(null);
+    		Book updatebook = updated.get();
+    		updatebook.setTitle(book.getTitle());
+    		updatebook.setDescription(book.getDescription());
+    		updatebook.setLanguage(book.getLanguage());
+    		updatebook.setNumberOfPages(book.getNumberOfPages());
     		return bookRepository.save(book);
     	} else {
     		System.out.println("This didn't work");
