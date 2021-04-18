@@ -69,7 +69,7 @@
     - Create your models, based on the Schemas in your Workbench
     ``` java
     @Entity
-    @Table(name="model")
+    @Table(name="models")
     public class Model {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -159,5 +159,16 @@
         public String index() {
             return "index.jsp";
     }
+    ```
+
+1. Jsp Files
+    ```jsp
+    <!-- Top of page -->
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
+    
+    <!-- In header -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/app.js"></script>
     ```
 
