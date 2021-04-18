@@ -166,6 +166,10 @@
     <!-- Top of page -->
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
+
+    <!-- if needing validation -->
+    <%@ page isErrorPage="true" %>    
+
     
     <!-- In header -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
