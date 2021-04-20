@@ -16,6 +16,23 @@ class DLList {
 
     // == Main Methods ==
 
+
+    prepend(target, node) {
+        if(this.head.data === target) {
+            this.addHead(node);
+        }
+        var runner = this.head;
+        while(runner!=null) {
+            if(runner.data === target) {
+                node.prev = runner.prev;
+                node.next = runner;
+                runner.prev.next = node;
+                runner.prev = node;
+            }
+            runner = runner.next;
+        }
+    }
+
     // push to head
     addHead(node) {
         if(this.isEmpty()) {
@@ -118,10 +135,10 @@ dll.addHead(node1);
 dll.addHead(node2);
 dll.addHead(node3);
 dll.addHead(node4);
-dll.removeTail();
-dll.addTail(node5);
-dll.removeHead();
+dll.addHead(node5);
+dll.prepend(5, new DLLNode(7));
 
-// dll.display();
+dll.display();
+console.log("______________________")
 dll.displayBack();
 
