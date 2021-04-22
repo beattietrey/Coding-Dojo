@@ -22,4 +22,12 @@ public class ProductService {
 		return productRepo.save(product);
 	}
 	
+	public Product findProduct(Long id) {
+		if(productRepo.findById(id).isPresent()) {
+			return productRepo.findById(id).get();
+		} else {
+			return null;
+		}
+	}
+	
 }

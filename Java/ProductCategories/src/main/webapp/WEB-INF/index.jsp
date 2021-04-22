@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Products/Categories</title>
 </head>
-<body>
-
-</body>
+	<body>
+		 <a href="/products/new">New Product</a>
+		 <a href="/categories/new">New Category</a>
+	</body>
 </html>
