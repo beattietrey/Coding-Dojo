@@ -16,6 +16,47 @@ class DLList {
 
     // == Main Methods ==
 
+
+    // return true or false if the current linked list is a palindrome
+    // a palindrome is a string of characters equal to itself when reversed
+    // assume your node.data are all numbers or lowercase chars
+    isPalindrome(){
+        var string1 = "";
+        var string2 = "";
+        var runner = this.head;
+        while(runner != null) {
+            string1 += runner.data.toString();
+            runner = runner.next
+        }
+        runner = this.tail
+        while (runner!=null) {
+            string2 += runner.data.toString();
+            runner= runner.prev
+        }
+        console.log(string1);
+        console.log(string2);
+        if(string1 === string2) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // reverse a doubly linked list in place
+    reverse() {
+        var runner = this.head;
+        while(runner != null) {
+            var temp = runner.next;
+            runner.next = runner.prev;
+            runner.prev = temp;
+            runner=runner.prev;
+        }
+        temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+    }
+
+
     // return true or false if a node exists with data === val
     exists(val) {
         if(this.head.data === val || this.tail.data === val) {
@@ -175,7 +216,23 @@ class DLList {
             return null;
         }
     }
+    display() {
+        var runner = this.head;
+        while(runner!=null) {
+            console.log(runner.data);
+            runner = runner.next;
+        }
+    }
+    
+    displayBack() {
+        var runner = this.tail;
+        while(runner!=null) {
+            console.log(runner.data);
+            runner = runner.prev;
+        }
+    }
 }
+
 
 
 var node1 = new DLLNode(1);
@@ -189,9 +246,18 @@ var node7 = new DLLNode(7);
 
 var dll = new DLList();
 
+
+
 dll.addHead(node1);
 dll.addHead(node2);
 dll.addHead(node3);
 dll.addHead(node4);
 
 
+dll.display();
+dll.displayBack();
+console.log("_________________________");
+dll.reverse();
+
+dll.display();
+dll.displayBack();
