@@ -10,5 +10,5 @@ import com.trey.prodcat.models.Product;
 @Repository
 public interface ProductRepo  extends CrudRepository<Product, Long>{
 	List<Product> findAll();
-//	List<Product> findByNotIn(List<Product> productList);
+	List<Product> findByNotContaining();
 }
