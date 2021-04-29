@@ -34,6 +34,23 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <!-- bcrypt -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
         ```
 
 1. In src/main/resources, edit application.properties, add these lines and update your schema name
@@ -172,7 +189,10 @@
 
     
     <!-- In header -->
+    <!-- CSS/JS/Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     ```
 
