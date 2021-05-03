@@ -77,7 +77,27 @@ class BST {
     // Levelorder (BFS - Breath first search)
     // Row-by-row left-right top-down
     // 25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 31, 44, 66, 90
-    printLevelorder(current) {}
+    printLevelorder(current) {
+        if (current === undefined){
+            current = this.root;
+        }
+        var queue = [];
+        if(current) {
+            queue.push(current);
+        }
+        while(queue.length > 0) {
+            var dequeuedNode=queue.shift();
+            console.log(dequeuedNode.val);
+
+            if(dequeuedNode.left) {
+                queue.push(dequeuedNode.left);
+            }
+
+            if(dequeuedNode.right) {
+                queue.push(dequeuedNode.right);
+            }
+        }
+    }
 
 
     isEmpty() {
