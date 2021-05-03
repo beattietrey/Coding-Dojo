@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title><c:out value="${task.name}"/></title>
 </head>
 <body>
 	<div class="container">
-		<h1><c:out value="${task.name}"/></h1>
-		<div class="row">
-			<div class="col">
+		<h1 class="mt-5 mb-5"><c:out value="${task.name}"/></h1>
+		<div class="row justify-content-around">
+			<div class="col ml-5">
 				<p>Name:</p>
 				<p>Priority Level:</p>
 				<p>Duration:</p>
@@ -28,7 +28,7 @@
 				<p>Description:</p>
 			</div>
 			<div class="col">
-				<form:form>
+				<form:form action="/editTask/<c:out value='${task.id}'/>" method="post" modelAttribute="task">
 				<p>			        
 					<form:errors path="name"/>
 			        <form:input path="name"/>
@@ -48,7 +48,7 @@
 					</form:select>
 				</p>
 			   <p>
-			   				        <form:errors path="duration"/>
+			   		<form:errors path="duration"/>
 			        <form:select path="duration">
 						<form:option value="1">1</form:option>
 						<form:option value="2">2</form:option>

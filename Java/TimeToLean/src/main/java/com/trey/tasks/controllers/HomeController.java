@@ -6,7 +6,9 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,4 +47,37 @@ public class HomeController {
  		}
  	}
     
+    @GetMapping("/show/{id}")
+    public String show(@PathVariable("id")Long id, Model model, HttpSession session) {
+    	Long userID = (Long) session.getAttribute("user_id");
+ 		if(userID!=null) {
+			if(taskService.findById(id) != null) {
+				Task task = taskService.findById(id).get();
+				if(task.getCreator() == userService.findUserById(userID)) {
+					model.addAttribute("task", task);
+					return "showTask.jsp";
+				} else {
+ 				System.out.println("Didn't go to the right place");
+ 	 	        return "redirect:/";
+				}	
+			} else {
+			System.out.println("Didn't go to the right place");
+ 	        return "redirect:/home";
+			}
+ 		} else {
+ 		return "redirect:/";
+ 		
+ 		}
+    }
+    
+    
+    @PostMapping("/edit")
+    public String edit(@Valid @ModelAttribute("task") Task task, BindingResult result, HttpSession session, Model model) {
+    	Long userID = (Long) session.getAttribute("user_id");
+ 		if(userID!=null) {
+ 			
+ 		} else {
+ 			
+ 		}
+    }
 }

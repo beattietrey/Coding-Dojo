@@ -36,7 +36,7 @@
 			  <tbody>
 				  <c:forEach items="${tasks}" var ="t">
 					    <tr>
-					      <th scope="row"><c:out value="${t.name}"/></th>
+					      <th scope="row"><a href='/home/show/<c:out value="${t.id}"/>'><c:out value="${t.name}"/></a></th>
 					      <td><c:out value="${t.priority}"/></td>
 					      <td><c:out value="${t.duration} ${t.unitOfTime}"/></td>
 					      <td><c:out value="${t.category}"/></td>
@@ -45,7 +45,7 @@
 			  </tbody>
 			</table>
 		</div>
-		<div class=" border border-dark p-3">
+		<div class="border border-dark p-3">
 			<h4>Add A New Task</h4>
 			<form:form action="/home/newTask" method="post" modelAttribute="task" class="row d-flex p-3 justify-content-between">
 				<p class="ml-5">
