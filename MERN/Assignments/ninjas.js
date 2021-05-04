@@ -25,3 +25,20 @@ ninja1.showStats();
 ninja1.drinkSake();
 ninja1.sayName();
 ninja1.showStats();
+
+class Sensei extends Ninja {
+    constructor(name) {
+        super(name, 200, 10, 10);
+            this.wisdom = 10;
+        }
+    speakWisdom() {
+        super.drinkSake();
+        console.log("Stupidity is often mistaken for Wisdom")
+    }
+    
+}
+
+const sensei = new Sensei("Cody")
+
+sensei.speakWisdom();
+sensei.showStats()
