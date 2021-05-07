@@ -51,7 +51,6 @@ function quickSort(nums = [], left = 0, right = nums.length-1){
         quickSort(nums,left,newPivot-1)
         quickSort(nums,newPivot+1,right)
     }
-    return nums
 }
 
 
