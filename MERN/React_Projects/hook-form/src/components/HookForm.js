@@ -8,13 +8,61 @@ const HookForm = () => {
     const [password, setPassword] = useState("")
     const [passConfirm, setConfirm] = useState("")
     const [formSubmitted, setFormSubmitted] = useState(false)
-
+    const [firstError, setFirstError] = useState("")
+    const [lastError, setLastError] = useState("")
+    const [emailError, setEmailError] = useState("")
+    const [passError, setPassError] = useState("")
+    const [confirmError, setConfirmError] = useState("")
+    
     const handler = ev  => {
         ev.preventDefault();
         setFormSubmitted(true)
         // Ternary Operator: Less verbose if/else
         // condition ? code to execute if true : code to execute if false
     }
+
+    const firstNameHandler = ev => {
+        setFirstName(ev.target.value)
+        if(ev.target.value.length > 0 && ev.target.value.length < 2) {
+            setFirstError("First Name must be at least 2 characters") 
+        } else {
+            setFirstError("")
+        }
+    }
+    const LastNameHandler = ev => {
+        setLastName(ev.target.value)
+        if(ev.target.value.length > 0 && ev.target.value.length < 2) {
+            setLastError("Last Name must be at least 2 characters") 
+        } else {
+            setLastError("")
+        }
+    }      
+    const emailHandler = ev => {
+        setEmail(ev.target.value)
+        if(ev.target.value.length > 0 && ev.target.value.length < 5) {
+            setEmailError("Email must be at least 5 characters") 
+        } else {
+            setEmailError("")
+        }
+    }    
+    const passHandler = ev => {
+        setPassword(ev.target.value)
+        if(ev.target.value.length > 0 && ev.target.value.length < 8) {
+            setPassError("Password must be at least 8 characters") 
+        } else {
+            setPassError("")
+        }
+    }
+    const confirmHandler = ev => {
+        setConfirm(ev.target.value)
+        if(ev.target.value.length > 0 && ev.target.value !== password) {
+            setConfirmError("Passwords must match") 
+        } else {
+            setConfirmError("")
+        }
+    }
+
+
     return (
         <div>
             { 
@@ -25,23 +73,28 @@ const HookForm = () => {
                 <form onSubmit={ handler }>
                     <div>
                         <label htmlFor="firstName">First Name:</label>
-                        <input type="text" name="firstName" onChange={ ev => setFirstName(ev.target.value)}/>
+                        <input type="text" name="firstName" onChange={ firstNameHandler }/>
+                        { firstError ? <p style={{color:'red'}}>{ firstError }</p> : ""  }
                     </div>
                     <div>
                         <label htmlFor="lastName">Last Name:</label>
-                        <input type="text" name="lastName"onChange={ ev => setLastName(ev.target.value)}/>
+                        <input type="text" name="lastName"onChange={ LastNameHandler }/>
+                        { lastError ? <p style={{color:'red'}}>{ lastError }</p> : ""  }
                     </div>
                     <div>
                         <label htmlFor="email">Email:</label>
-                        <input type="text" name="email"onChange={ ev => setEmail(ev.target.value)}/>
+                        <input type="text" name="email"onChange={ emailHandler }/>
+                        { emailError ? <p style={{color:'red'}}>{ emailError }</p> : ""  }
                     </div>
                     <div>
                         <label htmlFor="password">Password:</label>
-                        <input type="text" name="password"onChange={ ev => setPassword(ev.target.value)}/>
+                        <input type="text" name="password"onChange={ passHandler }/>
+                        { passError ? <p style={{color:'red'}}>{ passError }</p> : ""  }
                     </div>
                     <div>
                         <label htmlFor="passConfirm">Password Confirmation:</label>
-                        <input type="text" name="passConfirm"onChange={ ev => setConfirm(ev.target.value)}/>
+                        <input type="text" name="passConfirm"onChange={ confirmHandler }/>
+                        { confirmError ? <p style={{color:'red'}}>{ confirmError }</p> : ""  }
                     </div>
                     <input type="submit" value="Submit" />
                 </form>
