@@ -11,7 +11,7 @@ class PersonCard extends Component {
     addYear = () => {
         let temp = this.state.ageCount;
         this.setState({ageCount: temp+1})
-    }
+    } 
     
     render() {
         return(
