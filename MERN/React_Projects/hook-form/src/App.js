@@ -1,4 +1,5 @@
 import './App.css';
+import FormValidation from './components/FormValidation';
 import HookForm from './components/HookForm';
 
 function App() {

@@ -14,6 +14,18 @@ const HookForm = () => {
     const [passError, setPassError] = useState("")
     const [confirmError, setConfirmError] = useState("")
     
+    const [user, setUser] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        passConfirm: "",
+    })
+
+    const changeHandler = e => {
+        setUser({ ...user, [e.target.name]: e.target.value})
+    }
+
     const handler = ev  => {
         ev.preventDefault();
         setFormSubmitted(true)
@@ -88,12 +100,12 @@ const HookForm = () => {
                     </div>
                     <div>
                         <label htmlFor="password">Password:</label>
-                        <input type="text" name="password"onChange={ passHandler }/>
+                        <input type="password" name="password"onChange={ passHandler }/>
                         { passError ? <p style={{color:'red'}}>{ passError }</p> : ""  }
                     </div>
                     <div>
                         <label htmlFor="passConfirm">Password Confirmation:</label>
-                        <input type="text" name="passConfirm"onChange={ confirmHandler }/>
+                        <input type="password" name="passConfirm"onChange={ confirmHandler }/>
                         { confirmError ? <p style={{color:'red'}}>{ confirmError }</p> : ""  }
                     </div>
                     <input type="submit" value="Submit" />
