@@ -22,18 +22,19 @@ const BoxDisplay = () => {
         addBox(app.color, app.int);
         Array.from(document.querySelectorAll("input")).forEach(
             input => (input.value = "")
-          );
+        );
     }
 
     const inputHandler = e => { 
         setApp({...app, [e.target.name]: e.target.value})
         console.log(app)
     }
+
     return (
         <div>
             <form id = "form" onReset={ handler }>
                 <div>
-                    <label htmlFor="color">Color: </label>
+                    <label htmlFor="color"> Color: </label>
                     <input type="text" name="color" onChange={inputHandler}/>
                 </div>
                 <div>

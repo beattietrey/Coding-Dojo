@@ -62,3 +62,16 @@ Java/exam/src/test/java/com/trey/exam/ExamApplicationTests.java
 Java/ProductCategories/src/main/java/com/trey/prodcat/repositories/ProductRepo.java
 Java/exam/.mvn/wrapper/maven-wrapper.jar
 Java/exam/.mvn/wrapper/maven-wrapper.jar
+*.json
+MERN/React_Projects/tabs/public/favicon.ico
+MERN/React_Projects/tabs/public/index.html
+MERN/React_Projects/tabs/public/logo192.png
+MERN/React_Projects/tabs/public/logo512.png
+MERN/React_Projects/tabs/public/robots.txt
+MERN/React_Projects/tabs/README.md
+MERN/React_Projects/tabs/src/logo.svg
+MERN/React_Projects/tabs/src/index.js
+MERN/React_Projects/tabs/src/index.css
+MERN/React_Projects/tabs/src/reportWebVitals.js
+MERN/React_Projects/tabs/src/setupTests.js
+MERN/React_Projects/tabs/src/components/Tabs.jsx

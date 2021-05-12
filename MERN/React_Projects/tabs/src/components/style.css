@@ -1,0 +1,15 @@
+.body {
+    text-align: center;
+}
+
+.tab {
+    height: 25px;
+    width: 50px;
+    border: 2px solid black;
+    background-color: aqua;
+  }
+
+.displayBox {
+    width: 90%;
+    height: 30%;
+}
