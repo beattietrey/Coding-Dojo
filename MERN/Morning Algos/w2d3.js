@@ -16,12 +16,10 @@
 */
 function symmetricDifference(setA, setB){
     let diffArr = []
-    let sameArr = []
     for(let i = 0; i < setA.length;i++) {
         if(diffArr.indexOf(setA[i]) == -1) {
             if (setB.indexOf(setA[i]) == -1) {
                 diffArr.push(setA[i])
-                console.log("did you get here?")
             }
         }
     }
@@ -34,7 +32,6 @@ function symmetricDifference(setA, setB){
     }
 
     console.log(diffArr)
-    console.log(sameArr)
 }
 
 let nums1 = [4,1,2,3,4];
