@@ -1,10 +1,11 @@
 import './App.css';
 import Tabs from './components/Tabs';
+import Tasks from './components/Tasks';
 
 function App() {
   return (
     <div className="App">
-      <Tabs items={ ["A bee","17 pennies","Doggos"] }/>
+      <Tasks/>
     </div>
   );
 }
