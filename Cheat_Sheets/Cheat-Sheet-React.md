@@ -31,6 +31,11 @@
     ```
 1. Create a components folder and add you jsx files into it
 1. Use rafce shortcut to start your app
+1. If you are using any of these, also use:
+    ```
+    npm install @reach/router
+    npm install axios
+    ```
 
 
 
