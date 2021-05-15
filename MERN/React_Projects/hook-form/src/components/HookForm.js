@@ -22,15 +22,9 @@ const HookForm = () => {
         passConfirm: "",
     })
 
-    const changeHandler = e => {
-        setUser({ ...user, [e.target.name]: e.target.value})
-    }
-
     const handler = ev  => {
         ev.preventDefault();
         setFormSubmitted(true)
-        // Ternary Operator: Less verbose if/else
-        // condition ? code to execute if true : code to execute if false
     }
 
     const firstNameHandler = ev => {
