@@ -47,7 +47,7 @@
         ```js
         db.COLLECTION_NAME.remove({YOUR_QUERY_DOCUMENT}, BOOLEAN)
         ```
-    1. Update, requires a search parameter object, followed by the updated key/value pair set object, if you don't add the $set, the documetn will overwrite everything except the id, with the new information
+    1. Update, requires a search parameter object, followed by the updated key/value pair set object, if you don't add the $set, the document will overwrite everything except the id, with the new information
         ```js
         db.COLLECTION_NAME.update({YOUR_QUERY_DOCUMENT}, {NEW_KEY_VALUE_PAIR}).pretty()
         db.COLLECTION_NAME.update({YOUR_QUERY_DOCUMENT}, {$set:{NEW_KEY_VALUE_PAIR}}).pretty()
