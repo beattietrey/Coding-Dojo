@@ -6,8 +6,12 @@ module.exports.index = (request, response) => {
         })
 }
 
+module.exports.findAll = (request, response) => {
+    
+}
+
 module.exports.createProduct = (request, response) => {
-    const {title, price, description} = request.body;
+    const { title, price, description } = request.body;
     Product.create({
         title,
         price,
