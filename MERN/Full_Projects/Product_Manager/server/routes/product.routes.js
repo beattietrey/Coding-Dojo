@@ -2,7 +2,8 @@ const ProductController = require('../controllers/product.controller');
 
 module.exports = function(app) {
     app.get('/api', ProductController.index);
-    app.get('/api/product', ProductController.findAll);
-    
+    app.get('/api/products', ProductController.findAll);
+    app.get('/api/products/:id', ProductController.findOne);
+
     app.post('/api/product', ProductController.createProduct);
 }
