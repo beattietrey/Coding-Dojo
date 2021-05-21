@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, navigate, redirectTo } from '@reach/router'
+import { Link, navigate} from '@reach/router'
 import axios from 'axios'
 
 const ProductView = props => {
@@ -26,7 +26,6 @@ const ProductView = props => {
             <button onClick={() => deleteProduct(product._id)}> Delete </button>
             <Link to={`/products/${product._id}/edit`}> Edit </Link> 
             <button onClick={() => navigate('/products')}>Home</button>
-
         </div>
     )
 }

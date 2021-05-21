@@ -1,27 +1,19 @@
 import React, { useState} from 'react';
-import axios from 'axios';
-import { navigate } from '@reach/router';
 
-export default () => {
-    const [title,setTitle] = useState("")
-    const [price,setPrice] = useState(0)
-    const [description,setDescription] = useState("")
+export default props => {
+    const {initialTitle, initialPrice, initialDescription, onSubmitProp} = props
+    const [title,setTitle] = useState(initialTitle)
+    const [price,setPrice] = useState(initialPrice)
+    const [description,setDescription] = useState(initialDescription)
 
     const submitHandler = e => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/product", {
-            title,
-            price, 
-            description,
-        })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        onSubmitProp({title,price,description})
     }
 
 
     return (
         <div>
-            <h2>Product Manager</h2>
             <form onSubmit={ submitHandler }>
                 <div>
                     <label htmlFor="title">Title: </label>
