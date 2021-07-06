@@ -9,6 +9,18 @@ persistence(999) === 4 // because 9*9*9 = 729, 7*2*9 = 126,
 
 persistence(4) === 0 // because 4 is already a one-digit number
 
-function persistence(num) {
-
+function persistence(num, times=0) {
+    let test = num.toString()
+    if(test.length > 1) {
+        // console.log(true)
+        let ret = 1
+        for(var i = 0; i < test.length;i++) {
+            ret*=parseInt(test[i])
+            // console.log(ret)
+        }
+        return persistence(ret, times+1)
+    } else {
+        console.log(times)
+        return times
+    }
 }
