@@ -14,7 +14,23 @@
 //  */
 var lengthOfLongestSubstring = function(s) {
     let output = 0;
-    for(let i = 0; i < s.length; i++){
-        
+    let stringObj = {}
+    for(let i = 0; i < s.length; i++) {
+        let tempOutput = 1
+        stringObj[s[i]] = 1;
+        let j = i+1
+        while(!(s[j] in stringObj) && j < s.length) {
+            stringObj[s[j]] = 1;
+            j++
+            tempOutput++
+        }
+        if(tempOutput > output) {
+            output = tempOutput
+        }
+        stringObj = {}
     }
-}
+    
+    return output
+};
+
+console.log(lengthOfLongestSubstring("dvdf"))
